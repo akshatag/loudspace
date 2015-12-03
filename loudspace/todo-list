@@ -1,0 +1,16 @@
+TODO: 
+
+method for adding users to space
+welcome page should look better
+add spotify support
+catch invalid urls
+nicer forms
+cascading grid layout for spaces
+search within space
+search all spaces
+fix update media redirect
+
+
+<!-- <td><%= link_to 'Show', space_medium_path(@space, medium) %></td>
+        <td><%= link_to 'Edit', edit_space_medium_path(@space, medium) %></td>
+        <td><%= link_to 'Destroy', space_medium_path(@space, medium), method: :delete, data: { confirm: 'Are you sure?' } %></td> -->

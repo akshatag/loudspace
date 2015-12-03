@@ -1,0 +1,25 @@
+
+<div class="form_center">
+<%= form_for([@space, @medium]) do |f| %>
+  <% if @medium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
+
+      <ul>
+      <% @medium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit', class: 'btn btn-default' %>
+  </div>
+<% end %>
+</div>

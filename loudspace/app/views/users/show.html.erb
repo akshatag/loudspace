@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome <%= @user.name %></h1>
+
+<h3>Your spaces</h3>
+<%= link_to 'Add Space', new_space_path, class: 'btn btn-primary', style: 'margin-bottom: 30px;	' %>
+
+
+<div style="margin-left: 30px;">
+	<% @user.spaces.each do |space| %>
+		<%= link_to "#{space.name}", space_media_path(space), class: 'btn btn-primary', style: 'margin-bottom: 10px;' %><br>
+	<% end %>	
+</div>
+
+<%#= link_to 'Edit', edit_user_path(@user) %> 
+<%#= link_to 'Back', users_path %>

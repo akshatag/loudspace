@@ -1,0 +1,47 @@
+<h1>Editing Space</h1>
+
+<%= render 'form' %>
+
+<p>Add User</p>
+
+<form action="/spaces/<%= @space.id %>/users/new" method="POST">
+	<select name="user_id">
+		<option disabled selected> -- select a user -- </option>
+		<% User.all.each do |user| %>
+			<option value="<%= user.id %>"><%= user.name %></option>
+		<% end %>
+	</select>
+	<input type="submit" class="btn btn-primary"></input>
+</form>
+
+<br>
+<br>
+
+<p>Remove User</p>
+
+<form action="/spaces/<%= @space.id %>/users/remove" method="POST">
+	<select name="user_id">
+		<option disabled selected> -- select a user -- </option>
+		<% @space.users.each do |user| %>
+			<option value="<%= user.id %>"><%= user.name %></option>
+		<% end %>
+	</select>
+	<input type="submit" class="btn btn-primary"></input>
+</form>
+
+<br>
+<br>
+
+<p>Remove Media</p>
+<form action="/spaces/<%= @space.id %>/media/remove" method="POST">
+	<select name="medium_id" style="max-width: 200px;">
+		<option disabled selected> -- select media -- </option>
+		<% @space.media.each do |medium| %>
+			<option value="<%= medium.id %>"><%= medium.url %></option>
+		<% end %>
+	</select>
+	<input type="submit" class="btn btn-primary"></input>
+</form>
+
+<%= link_to 'Show', @space %> |
+<%= link_to 'Back', spaces_path %>

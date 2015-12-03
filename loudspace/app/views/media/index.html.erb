@@ -1,0 +1,20 @@
+<head>
+</head>
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= @space.name %></h1>
+<%= link_to 'Add Media', new_space_medium_path(@space), class: 'btn btn-primary' %>
+<%= link_to 'Settings', edit_space_path(@space), class: 'btn btn-primary' %>
+<%= link_to 'Spaces', spaces_path, class: 'btn btn-primary' %>
+
+<center><div class="freewall">
+<% @media.each do |medium| %>
+  <%= medium.render %>
+<% end %>
+</div></center>
+
+<div style="clear: both;"></div>
+
+
+
