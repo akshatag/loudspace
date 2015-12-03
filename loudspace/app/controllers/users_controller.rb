@@ -30,18 +30,15 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new
+    @user = User.new(user_params)
 
-    @user.name = params[:user][:name]
-    @user.email = params[:user][:email]
     @user.password = params[:user][:password]
-
 
     if @user.save
       session[:user_id] = @user.id
       redirect_to @user
     else
-      redirect_to '/users/new'
+      render :new
     end
 
     # respond_to do |format|

@@ -36,7 +36,8 @@ class MediaController < ApplicationController
     if @medium.save
       redirect_to space_media_path(@space)
     else
-      redirect_to new_space_medium_path(@space)
+      # redirect_to new_space_medium_path(@space)
+      render :new
     end
 
     # @medium = Medium.new(medium_params)
